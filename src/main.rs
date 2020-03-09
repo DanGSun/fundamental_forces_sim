@@ -42,12 +42,12 @@ impl App {
             for i in im {
                 if i.mass < 10000. {
                     if i.charge < 0. {
-                        ellipse(GREEN, circle(i.loc.x+cam.0, i.loc.y+cam.1,i.mass/900.), transform, gl);
+                        ellipse(GREEN, circle(i.loc.x+cam.0, i.loc.y+cam.1,4.), transform, gl);
                     } else {
-                        ellipse(RED, circle(i.loc.x+cam.0, i.loc.y+cam.1,i.mass/900.), transform, gl);
+                        ellipse(RED, circle(i.loc.x+cam.0, i.loc.y+cam.1,4.), transform, gl);
                     }
                 } else {
-                    ellipse(BLACK, circle(i.loc.x+cam.0, i.loc.y+cam.1,i.mass/1500.), transform, gl);
+                    ellipse(BLACK, circle(i.loc.x+cam.0, i.loc.y+cam.1,4.), transform, gl);
                 }
             }
         });
@@ -94,21 +94,21 @@ fn main() {
     app.universe.add_body(neg);
     app.universe.add_body(neg2);
 
-    // At.2
-    let pos2 = Body::new(1600., 500., 20000., 2e12);
-    let mut neg3 = Body::new(1640., 500., 8000., -2e12);
-    let mut neg4 = Body::new(1560., 500., 8000., -2e12);
-
-    neg3.force += Vector2::new(0., 0.05);
-    neg4.force += Vector2::new(0., -0.05);
-
-    app.universe.add_body(pos2);
-    app.universe.add_body(neg3);
-    app.universe.add_body(neg4);
+//    // At.2
+//    let pos2 = Body::new(1600., 500., 20000., 2e12);
+//    let mut neg3 = Body::new(1640., 500., 8000., -2e12);
+//    let mut neg4 = Body::new(1560., 500., 8000., -2e12);
+//
+//    neg3.force += Vector2::new(0., 0.05);
+//    neg4.force += Vector2::new(0., -0.05);
+//
+//    app.universe.add_body(pos2);
+//    app.universe.add_body(neg3);
+//    app.universe.add_body(neg4);
 
 
     let mut event_sets = EventSettings::new();
-    event_sets.set_ups(10000);
+    event_sets.set_ups(2000);
 
     let mut events = Events::new(event_sets);
     while let Some(e) = events.next(&mut window) {

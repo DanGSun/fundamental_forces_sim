@@ -5,9 +5,9 @@ use std::f64::consts::PI;
 use na::{Vector2, Point2};
 use std::thread::sleep;
 
-const G: f64 = 6.67430e-11;
-const E0: f64 = 8.85418e-12;
-const B_CHARGE: f64 = 1.60217e-19;
+const G: f64 = 6.67430e-11; // should be e-11
+const E0: f64 = 8.85418e-12; // should be e-12
+const B_CHARGE: f64 = 1.60217e-19; // should be e-19
 
 #[derive(Clone)]
 pub struct Body {
